@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Main Page </title>
+
+  <style type="text/css">
+    @font-face {
+      font-family: myNameType;
+      src: url("Pacifico_Regular.ttf") ;
+      font-weight: normal;
+    }
+   @font-face {
+      font-family: quoteType;
+      src: url("DancingScript_Bold.ttf");
+    }
+    @font-face {
+        font-family: bodyType;
+        src: url("Farsan-Regular.ttf");
+    }
+    @font-face{
+      font-family: hallelujahType;
+      src: url("GloriaHallelujah.ttf");
+    }
+    @font-face {
+        font-family: emphasizeType;
+        src: url("Lobster-Regular.ttf");
+    }
+    @font-face {
+        font-family: summaryType;
+        src: url("Satisfy-Regular.ttf");
+    }
+
+    div.side_bar{
+      position: absolute;
+      background-image: url("side_bar_background.jpg");
+      background-attachment: fixed;
+      background-size: 350px 100%;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 30%;
+    }
+    .regularClass{
+      font-family: bodyType;
+    }
+    div.main{
+      position: absolute;
+      overflow-y: scroll;
+      left: 350px;
+      top: 0;
+      bottom: 0;
+      width: 78%;
+      background-image: url("main_background.jpg");
+      background-attachment: fixed;
+    }
+    .circle-img{
+      border-radius: 50%;
+      position: absolute;
+      left: 125px;
+      top: 50px;
+      height: 100px;
+      width: 100px;
+    }
+    .thumbnail:hover {
+        position:relative;
+        top:-25px;
+        left:-35px;
+        width:500px;
+        height:auto;
+        display:block;
+        z-index:999;
+    }
+    .circle-icon{
+      border-radius: 35%;
+      height: 40px;
+      width: 40px;
+      position: absolute;
+      bottom: 40px;
+    }
+    .nameFont{
+      font-family: myNameType;
+      color: white;
+      position: absolute;
+      left: 30px;
+    }
+    .nameFont:hover{
+      color: #a9dfe8;
+      position: absolute;
+      font-size: 40px;
+      left: 0;
+      z-index: 999;
+    }
+    .quoteFont{
+      font-family: quoteType;
+      font-color: white;
+    }
+    .summaryClass{
+      font-family: summaryType;
+    }
+    .bodyClass{
+      font-family: bodyType;
+      font-size: 30px;
+      position: relative;
+      left: 30px;
+    }
+    .emphasizeClass{
+      font-family: emphasizeType;
+    }
+    .hallelujahClass{
+      font-family: hallelujahType;
+    }
+    .personal_info_text{
+      position: relative;
+      display: none;
+    }
+    .personal_info_class{
+      position: relative;
+      height: 100%;
+    }
+    .personal_info_class:hover .personal_info_text{
+        display: block;
+        background: black;
+        position: absolute;
+        top: 150px;
+        left: 50px;
+    }
+    .education_class{
+      position: relative;
+      height: 120%;
+      background-image: url("educational_background.jpg");
+      background-attachment: fixed;
+      background-size: cover;
+    }
+    .dream_class{
+        position: relative;;
+        height: 100%;
+        font-family: summaryType;
+        font-weight: bold;
+        color: #161819;
+        background-image: url("dream_big.jpg");
+        background-attachment: fixed;
+        background-size: cover;
+    }
+    .accomplishment_class{
+      position: relative;
+      height: 100%;
+      font-family: hallelujahType;
+      color: white;
+    }
+    .top_button{
+      position: absolute;
+      right: 100px;
+      bottom: 50px;
+      overflow: fixed;
+      z-index: 999;
+    }
+    a:link{text-decoration: none;}
+    a:hover{
+      position: absolute;
+      font-size: 40px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="side_bar">
+    <!--Section for the profile image -->
+    <img class="circle-img" src="profile_pic.jpg" />
+    <img class="thumbnail" src="profile_pic.jpg" style="border-radius: 50%; position: absolute; left: 125px; top: 50px" height="100px"  width="100px" />
+    <br> <br> <br> <br> <br> <br> <br> <br>
+    <!-- Full NAME-->
+    <h1 class="nameFont"> Mehedi Imam Shafi </h1>
+    <br> <br> <br>
+    <p class="summaryClass" style="position: absolute; left: 30px; font-size: 25px; color: #eaa1d1;">
+      Lots of <big> <b> Wishes </b></big> yet to come true </p>
+
+    <a href="mailto:mehedishafi@hotmail.com"> <img style=" position: absolute; left: 150px; bottom: 100px; border-radius: 35%"
+         src="mail_me.png" title="email me" height="30px"/> </a>
+
+    <!-- part for hidden portions -->
+    <br> <br> <br> <br><br> <br>
+    <a style="position relative; left: 30px;" href="#personal_info_div">
+       <b style=" position: relative; left: 80px; font-family: emphasizeType; font-size: 30px; color: white;"> Personal Info </b> </a>
+    <br> <br>
+    <a style="position relative; left: 30px;" href="#education_div">
+       <b style=" position: relative; left: 80px; font-family: emphasizeType; font-size: 30px; color: white;"> Education </b> </a>
+    <br> <br>
+    <a style="position relative; left: 30px;" href="#dream_id_q">
+       <b style=" position: relative; left: 80px; font-family: emphasizeType; font-size: 30px; color: white;"> Dream </b> </a>
+    <br> <br>
+    <a style="position relative; left: 30px;" href="#accomplished">
+      <b style=" position: relative; left: 80px; font-family: emphasizeType; font-size: 30px; color: white;"> Accomplishment </b> </a>
+
+    <!--This section contains the logo in the bottom of the side_bar navigating to various social links -->
+    <a href="https://www.facebook.com/mehedi.shafi" target="_blank"> <img class="circle-icon" style="left: 30px;"
+      src="fb_icon.png" title="Facebook"/> </a>
+    <a href="https://github.com/mehedi-shafi" target="_blank"> <img class="circle-icon" style="left: 85px;"
+      src="github_icon.png" title="GITHUB" /> </a>
+    <a href="https://twitter.com/mehedishafi" target="_blank"> <img class="circle-icon" style="left: 140px;"
+      src="twitter_icon.png" title="twitter"/> </a>
+    <a href="https://www.reddit.com/user/mehedi_shafi/" target="_blank"> <img class="circle-icon" style="left: 195px;"
+      src="reddit_icon.png" title="reddit"/> </a>
+    <a href="https://plus.google.com/+ShafiMehedic" target="_blank"> <img class="circle-icon" style="left: 250px;"
+      src="g+_icon.png" title="Google+" /> </a>
+  </div>
+
+  <div class="main">
+    <!-- personal information division -->
+    <div class="personal_info_class" id = "personal_info_div">
+    <h1  class="emphasizeClass" style="position: relative; left: 20px; color: black; font-weight: bold;"> Personal Info </h1>
+
+    <ul class="bodyClass" style="font-size: 30px; position: absolute; left: 50px;">
+      <b> <i> <big> <big style="color: #042963; position: relative; left: 60px;"> Mehedi Imam Shafi </big> </big> </i> </b> <br>
+      <li> Date of Birth: <b> May 11, 1996 </b> </li>
+      <li> Nationality: <b> Bangladeshi </b> </li>
+      <li> Place of Birth: <b> Bangladesh </b> </li>
+      <li> Gender: <b> Male </b> </li>
+      <li> Occupation: <b> Student </b> </li>
+      <li> Mailing address: <b> Dania, Dhaka-1236, Dhaka, Bangladesh </b> </li>
+      <li> Blood Group: <b> O+ </b> </li>
+      <li> Maritial Status: <b> Unmarried </b> </li>
+      </address>
+    </ul>
+  </div>
+
+  <div class="education_class" id="education_div">
+    <h1 class="emphasizeClass" style="position: relative; left: 20px; color: black; font-weight: bold;"> Educational Background </h1>
+    <h3 class="bodyClass"> <b> Bachelor of Science </b> </h3>
+    <ul class="bodyClass" style="font-size: 20px">
+      <li> Status: <b> Current </b> </li>
+      <li> Institute: <b> Daffodil International University </b> </li>
+      <li> Major: <b> Computer Science and Engineering </b> </li>
+      <li> Department: <b> CSE </b> </li>
+      <li> Start: <b> January 2016 </b> </li>
+      <li> End: <b> December 2018 (approx) </b> </li>
+    </ul>
+    <h3 class="bodyClass"> <b> Higher Secondary Certificate </b> </h3>
+    <ul class="bodyClass" style="font-size: 20px">
+      <li> Status: <b> Completed </b> </li>
+      <li> Institute: <b> Dhaka College </b> </li>
+      <li> Major: <b> Science </b> </li>
+      <li> Start: <b> June 2012 </b> </li>
+      <li> End: <b> June 2014 </b> </li>
+      <li> Result: <b> 5.0 </b> </li>
+    </ul>
+    <h3 class="bodyClass"> <b> Secondary School Certificate </b> </h3>
+    <ul class="bodyClass" style="font-size: 20px;">
+      <li> Status: <b> Completed </b> </li>
+      <li> Institute: <b> A. K. High School and College</b> </li>
+      <li> Major: <b> Science </b> </li>
+      <li> Start: <b> Januray 2010 </b> </li>
+      <li> End: <b> May 2012 </b> </li>
+      <li> Result: <b> 5.0 </b> </li>
+    </ul>
+    <a href="#personal_info_div" class="top_button">
+      <img style="position: absolute; right: 10px; bottom: 5px;" src="to-top.png" title="back to top" height="70" width="70"/> </a>
+  </div>
+
+  <div style="position: relative; height: 100%;" id="dream_id_q">
+    <q style="font-family: quoteType; position: absolute; color: #1512e2; top: 50%; left: 100px; font-size: 65px;"> A person is not a human without a dream. </q>
+    <a href="#personal_info_div" class="top_button">
+      <img style="position: absolute; right: 10px; bottom: 5px;" src="to-top.png" title="back to top" height="70" width="70"/> </a>
+  </div>
+  <div class="dream_class" id="dream_id">
+    <h1 style="position: absolute; top:50%; left: 170px;"> WATCH ME </h1>
+    <a href="#personal_info_div" class="top_button">
+      <img style="position: absolute; right: 10px; bottom: 5px;" src="to-top.png" title="back to top" height="70" width="70"/> </a>
+  </div>
+
+  <div class="accomplishment_class" id="accomplished">
+    <summary style="font-family: summaryType; position: relative; top: 30px; left: 300px; font-size: 40px;">
+      Have done nothing that important yet </summary>
+
+    <iframe style="position: relative; top: 100px; left:380px;" src="https://www.youtube.com/embed/fIIPsl5U_MQ"
+        width="500" height="500" autoplay frameborder="0" allowfullscreen> </iframe>
+    <a href="#personal_info_div" class="top_button">
+       <img style="position: absolute; right: 10px; bottom: 5px;" src="to-top.png" title="back to top" height="70" width="70"/> </a>
+  </div>
+
+  <div style="position: relative; height: 100%;" id="dream_id_q">
+    <q style="font-family: quoteType; position: absolute; color: #1512e2; top: 50%; left: 100px; font-size: 65px;">
+      Perfection is always a work in progress. </q>
+    <a href="#personal_info_div" class="top_button">
+      <img style="position: absolute; right: 10px; bottom: 5px;" src="to-top.png" title="back to top" height="70" width="70"/> </a>
+  </div>
+
+  </div>
+</body>
+</html>
