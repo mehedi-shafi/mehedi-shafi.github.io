@@ -1,0 +1,102 @@
+<html>
+
+    <head>
+        <title>How to make a simple signup login system using xampp android</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">                
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gist-embed/2.4/gist-embed.min.js"></script>
+        <link rel="stylesheet" href="style.css" >
+    </head>
+
+    <body>
+        <h3>Designs</h3>
+        <hr/>
+        <h4>There are 3 layout files to create the applications</h4>
+        <h5>This is the main activity and also the login activity</h5>
+        <code>activity_mail.xml</code>
+        <code data-gist-id="mehedi-shafi/dce468a410f972737597727884a1651f" data-gist-file="activity_main.xml"></code>
+        <h5>This is the sign up activity</h5>
+        <code>activity_sign_up.xml</code>
+        <code data-gist-id="mehedi-shafi/dce468a410f972737597727884a1651f" data-gist-file="activity_sign_up.xml"></code>
+        <h5>This is the result activity to show after sign in or sign up</h5>
+        <code>activity_result.xml</code>
+        <code data-gist-id="mehedi-shafi/dce468a410f972737597727884a1651f" data-gist-file="activity_result.xml"></code>          
+        
+        <hr/>
+        <p>Before starting we need to change a few things</p>
+        <ul>
+            <li>Grant permission for internet</li>
+            <li>Add this line of code <code data-gist-id="mehedi-shafi/dce468a410f972737597727884a1651f" data-gist-file="mainfest.xml"></code> to your manifest.xml</li>
+            <li>Add dependencies OKHTTP</li>
+            <li>Add this line <code data-gist-id="mehedi-shafi/dce468a410f972737597727884a1651f" data-gist-file="build.gradle" data-gist-line="28"></code> to your app level gradle file</li>
+        </ul>
+
+        <hr/>
+
+        <p>Now we need to setup our server. in this case on XAMPP</p>
+        <code>sigin.php</code>
+        <code data-gist-id="mehedi-shafi/dce468a410f972737597727884a1651f" data-gist-file="signin.php"></code>
+        <p>you might need to change the <em>password</em> for <b>root</b> just change the parameter inside <code>$con = mysqli_connect();</code> here third parameter is the password in our case which is none</p>
+        <p>This file will accept two post type parameters and handle the signin procedure</p>
+        <br>
+        <code>signup.php</code>
+        <code data-gist-id="mehedi-shafi/dce468a410f972737597727884a1651f" data-gist-file="signup.php"></code>
+        <p>This file will take 4 post parameters and handle the signup procedure</p>
+        <br/>
+        <p></p><b>copy both file to 'C:/xampp/htdocs/api'</b><i> or any other folder under htdocs you like</i></p>
+        <br/>
+        <p>setup database</p>
+        <ul>
+            <li>log-in into phpmyadmin via "localhost"</li>
+            <li>create a new database</li>
+            <li>import</li>
+            <li>import the sql dump given below or modify as you seem fit.</li>
+        </ul>
+        <code data-gist-id="mehedi-shafi/dce468a410f972737597727884a1651f" data-gist-file="users.sql"></code>
+        <br/>
+        <p>Now before going to next step we need to check if the server is running properly</p>
+        <p>copy this file to your <b>api</b> folder as well</p>
+        <code data-gist-id="mehedi-shafi/dce468a410f972737597727884a1651f" data-gist-file="index.html"></code>
+        <p>now go <a href="http://localhost/api/"> here</a></p>
+        <p>and try to sign in using <b>user: <i>toma</i> password: <i>tomato</i></b></p>
+        <p>if works go to next level</p>
+
+        <hr/>
+        <h4>Time to work on android java</h4>
+        <ul>
+            <li>Create a java file named <code>OnlineHandler.java</code></li>
+            <code data-gist-id="mehedi-shafi/dce468a410f972737597727884a1651f" data-gist-file="OnlineHandler.java"></code>
+            <li> it extends AsyncTask
+            <code data-gist-id="mehedi-shafi/dce468a410f972737597727884a1651f" data-gist-file="OnlineHandler.java" data-gist-line="18"></code>
+            <p>and override the method <code>onPostExecute()</code></p></li>
+            <li>see this method
+            <code data-gist-id="mehedi-shafi/dce468a410f972737597727884a1651f" data-gist-file="OnlineHandler.java" data-gist-line="77-92"></code>
+            <p>this will choose wheather to login or signup according to parameters passed on the constructors</p></li>
+            <li><p>and these two will do the post work
+                    <code data-gist-id="mehedi-shafi/dce468a410f972737597727884a1651f" data-gist-file="OnlineHandler.java" data-gist-line="50-57"></code>
+                    <code data-gist-id="mehedi-shafi/dce468a410f972737597727884a1651f" data-gist-file="OnlineHandler.java" data-gist-line="59-66"></code>    
+            </p></li>
+            <li>onPostExecute() method will handle what happens after the task is done. in our case passing to the next acitvity
+                    <code data-gist-id="mehedi-shafi/dce468a410f972737597727884a1651f" data-gist-file="OnlineHandler.java" data-gist-line="68-75"></code>                     
+            </li>
+            <li>You need to change the URL according to your PC's IP address on 
+                <code data-gist-id="mehedi-shafi/dce468a410f972737597727884a1651f" data-gist-file="OnlineHandler.java" data-gist-line="51"></code>
+                <code data-gist-id="mehedi-shafi/dce468a410f972737597727884a1651f" data-gist-file="OnlineHandler.java" data-gist-line="60"></code> 
+            </li>
+            <li>To get your IP Address open a command promt and type <code>ipconfig</code></li>
+        </ul>
+
+        <br/>
+        <h4>all that is left is to make the views working</h4>
+        <p>follow the java codes as below</p>
+        <code data-gist-id="mehedi-shafi/dce468a410f972737597727884a1651f" data-gist-file="MainActivity.java"></code>    
+        <code data-gist-id="mehedi-shafi/dce468a410f972737597727884a1651f" data-gist-file="Result.java"></code>    
+        <code data-gist-id="mehedi-shafi/dce468a410f972737597727884a1651f" data-gist-file="SignUp.java"></code>     
+        
+        <br/>
+        <p>Added some additional color and string which can be found here</p>
+        <code data-gist-id="mehedi-shafi/dce468a410f972737597727884a1651f" data-gist-file="strings.xml"></code>    
+        <code data-gist-id="mehedi-shafi/dce468a410f972737597727884a1651f" data-gist-file="colors.xml"></code>            
+    </body>
+
+</html>
