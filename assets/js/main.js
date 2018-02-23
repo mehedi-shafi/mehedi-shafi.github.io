@@ -1,3 +1,26 @@
+let readMoreToggle = () => {
+		console.log('toggle');
+		let theButton = document.getElementById("readMoreToggleButton");
+		let currentVal = theButton.innerHTML;
+		if (currentVal == 'Read more'){
+			theButton.innerHTML = 'Read Less';
+		}
+		else{
+			theButton.innerHTML = 'Read More';
+		}
+}
+
+let markSectionReference = (number) => {
+	for (let i = 0; i < $("#secrefs").length; i++){
+		if (i == number-1){
+			document.querySlectorAll("#secrefs")[i].style.color = "#682DAC";
+		}
+		else{
+			document.querySelectorAll("#secrefs")[i].style.color = "white";
+		}
+	}
+}
+
 (function($) {
 
 	var settings = {

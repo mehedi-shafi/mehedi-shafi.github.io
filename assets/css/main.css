@@ -1976,6 +1976,12 @@
 
 /* Image */
 
+	.profile_img_avater{
+		border-radius: 100%;
+		width: 140px;
+		height: 140px;
+	}
+
 	.image {
 		border-radius: 0.35em;
 		border: 0;
