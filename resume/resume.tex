@@ -1,0 +1,119 @@
+\documentclass[a4paper]{styles/deedy-resume} % Use US Letter paper, change to a4paper for A4 
+
+\begin{document}
+\hypersetup{%
+    pdfborder = {0 0 0}
+}
+
+%----------------------------------------------------
+% SECTION PATHS
+%----------------------------------------------------
+
+\newcommand*{\ExpreiencePath}{sections/experiences}
+\newcommand*{\ProjectPath}{sections/projects}
+\newcommand*{\Certifications}{sections/certifications}
+\newcommand*{\Achievements}{sections/achievements}
+
+
+%----------------------------------------------------
+
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION
+%----------------------------------------------------------------------------------------
+
+\lastupdated % Print the Last Updated text at the top right
+
+\namesection{Mehedi Imam}{Shafi}{ % Your name profile or other web address
+\href{https://mehedi-shafi.github.io}{\bf https://mehedi-shafi.github.io} \\
+\href{mailto:mehedishafi@hotmail.com}{mehedishafi@hotmail.com} | +880-1920884121 | 1599 Dania, Dhaka, Bangladesh}
+
+%----------------------------------------------------------------------------------------
+%	LEFT COLUMN
+%----------------------------------------------------------------------------------------
+
+\begin{minipage}[t]{0.33\textwidth} % The left column takes up 33% of the text width of the page
+
+%------------------------------------------------
+% Skills
+%------------------------------------------------
+
+\input{sections/skills/skills}
+
+%------------------------------------------------
+% Education
+%------------------------------------------------
+
+\input{sections/education/education}
+
+%------------------------------------------------
+
+\end{minipage} % The end of the left column
+\hfill
+%
+%------------------------------------------------
+%	RIGHT COLUMN
+%------------------------------------------------
+%
+\begin{minipage}[t]{0.66\textwidth} % The right column takes up 66% of the text width of the page
+
+%------------------------------------------------
+% Experience
+%------------------------------------------------
+
+
+\input{sections/experiences/experiences}
+
+%------------------------------------------------
+
+%------------------------------------------------
+% Projects
+%------------------------------------------------
+
+\input{\ProjectPath/projects}
+
+%------------------------------------------------
+
+\end{minipage} % The end of the right column
+
+%------------------------------------------------
+
+%------------------------------------------------
+%	SECOND PAGE 
+%------------------------------------------------
+
+\newpage % Start a new page
+
+\begin{minipage}[t]{0.33\textwidth} % The left column takes up 33% of the text width of the page
+
+%------------------------------------------------
+% Links
+%------------------------------------------------
+
+\input{sections/links/links}
+
+\end{minipage} % The end of the left column
+\hfill
+\begin{minipage}[t]{0.66\textwidth} % The right column takes up 66% of the text width of the page
+
+
+%------------------------------------------------
+% Projects page 2
+%------------------------------------------------
+
+\input{\ProjectPath/projects_p2}
+
+%------------------------------------------------
+% Certifications
+%------------------------------------------------
+
+\input{\Certifications/certifications}
+
+%------------------------------------------------
+% Achievements
+%------------------------------------------------
+
+\end{minipage} % The end of the right column
+
+%-----------------------------------------------
+
+\end{document}
