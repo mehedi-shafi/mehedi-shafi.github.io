@@ -2130,9 +2130,11 @@
 
 		ul.icons {
 			margin-top: 10%;
+			margin-left: 10%;
 			cursor: default;
 			list-style: none;
-			padding-left: 0;
+			padding: 10px 10px 10px 10px;
+			background-color: rgba(20, 18, 18, 0.788);
 		}
 
 			ul.icons li {
