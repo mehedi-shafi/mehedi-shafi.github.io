@@ -1,3 +1,4 @@
+% !TEX program=lualatex
 \documentclass[a4paper]{styles/deedy-resume} % Use US Letter paper, change to a4paper for A4 
 
 \begin{document}
@@ -13,7 +14,7 @@
 \newcommand*{\ProjectPath}{sections/projects}
 \newcommand*{\Certifications}{sections/certifications}
 \newcommand*{\Achievements}{sections/achievements}
-
+\newcommand*{\Lectures}{sections/lectures}
 
 %----------------------------------------------------
 
@@ -23,8 +24,8 @@
 
 \lastupdated % Print the Last Updated text at the top right
 
-\namesection{Mehedi Imam}{Shafi}{ % Your name profile or other web address
-{\bf R\&D Engineer | Data Scientist} |
+\namesection{Mehedi Imam}{Shafi} % Your name profile or other web address
+{{\bf R\&D Engineer | Data Scientist} |
 \href{https://mehedi-shafi.github.io}{\bf https://mehedi-shafi.github.io} \\
 \href{mailto:mehedishafi@hotmail.com}{mehedishafi@hotmail.com} | +880-1920884121 | 1599 Dania, Dhaka, Bangladesh}
 
@@ -102,6 +103,12 @@
 %------------------------------------------------
 
 \input{\ProjectPath/projects_p2}
+
+%------------------------------------------------
+% Lectures and other sessions
+%------------------------------------------------
+
+\input{sections/lectures/lectures}
 
 %------------------------------------------------
 % Certifications
