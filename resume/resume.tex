@@ -1,127 +1,56 @@
-% !TEX program=lualatex
-\documentclass[a4paper]{styles/deedy-resume} % Use US Letter paper, change to a4paper for A4 
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+\documentclass[11pt, a4paper]{styles/awesome-cv} % Use US Letter paper, change to a4paper for A4 
 
-\begin{document}
-\hypersetup{%
-    pdfborder = {0 0 0}
-}
+\geometry{left=1.4cm, top=.8cm, right=1.4cm, bottom=1.8cm, footskip=.5cm}
+
+\colorlet{awesome}{awesome-darknight}
+
+\setbool{acvSectionColorHighlight}{true}
+
+\setbool{acvSectionColorHighlight}{true}
 
 %----------------------------------------------------
 % SECTION PATHS
 %----------------------------------------------------
 
-\newcommand*{\ExpreiencePath}{sections/experiences}
+\newcommand*{\ExperiencePath}{sections/experiences}
 \newcommand*{\ProjectPath}{sections/projects}
 \newcommand*{\Certifications}{sections/certifications}
 \newcommand*{\Achievements}{sections/achievements}
 \newcommand*{\Lectures}{sections/lectures}
+\newcommand*{\SkillsSection}{sections/skills/skills.tex}
 
 %----------------------------------------------------
 
-%----------------------------------------------------------------------------------------
-%	TITLE SECTION
-%----------------------------------------------------------------------------------------
 
-\lastupdated % Print the Last Updated text at the top right
+% CV starts
 
-\namesection{Mehedi Imam}{Shafi} % Your name profile or other web address
-{{\bf R\&D Engineer | Data Scientist} |
-\href{https://mehedi-shafi.github.io}{\bf https://mehedi-shafi.github.io} \\
-\href{mailto:mehedishafi@hotmail.com}{mehedishafi@hotmail.com} | +880-1920884121 | 1599 Dania, Dhaka, Bangladesh}
+% head
+\name{Mehedi Imam}{Shafi}
+\position{Software Engineer {\enskip\cdotp\enskip} R\&D Engineer}
+\address{1599 Nurpur, South Dania, Dhaka - 1236, Bangladesh}
+\mobile{(+880) 1920-884121}
+\email{mehedishafi@hotmail.com}
+\homepage{mehedi-shafi.github.io}
+\github{mehedi-shafi}
+\linkedin{mehedi-shafi}
 
-%----------------------------------------------------------------------------------------
-%	LEFT COLUMN
-%----------------------------------------------------------------------------------------
+\begin{document}
 
-\begin{minipage}[t]{0.33\textwidth} % The left column takes up 33% of the text width of the page
+\makecvheader[C]
 
-%------------------------------------------------
-% Skills
-%------------------------------------------------
+\makecvfooter
+    {\today}
+    {MEHEDI SHAFI RÉSUMÉ}
+    {\thepage}
 
-\input{sections/skills/skills}
+% CV Sections
 
-%------------------------------------------------
-% Education
-%------------------------------------------------
-
-\input{sections/education/education}
-
-%------------------------------------------------
-
-\end{minipage} % The end of the left column
-\hfill
-%
-%------------------------------------------------
-%	RIGHT COLUMN
-%------------------------------------------------
-%
-\begin{minipage}[t]{0.66\textwidth} % The right column takes up 66% of the text width of the page
-
-%------------------------------------------------
-% Experience
-%------------------------------------------------
-
-
-\input{sections/experiences/experiences}
-
-%------------------------------------------------
-
-%------------------------------------------------
-% Projects
-%------------------------------------------------
-
+\input{\SkillsSection}
+\input{\ExperiencePath/experiences}
 \input{\ProjectPath/projects}
-
-%------------------------------------------------
-
-\end{minipage} % The end of the right column
-
-%------------------------------------------------
-
-%------------------------------------------------
-%	SECOND PAGE 
-%------------------------------------------------
-
-\newpage % Start a new page
-
-\begin{minipage}[t]{0.33\textwidth} % The left column takes up 33% of the text width of the page
-
-%------------------------------------------------
-% Links
-%------------------------------------------------
-
-\input{sections/links/links}
-
-\end{minipage} % The end of the left column
-\hfill
-\begin{minipage}[t]{0.66\textwidth} % The right column takes up 66% of the text width of the page
-
-
-%------------------------------------------------
-% Projects page 2
-%------------------------------------------------
-
-\input{\ProjectPath/projects_p2}
-
-%------------------------------------------------
-% Lectures and other sessions
-%------------------------------------------------
-
-\input{sections/lectures/lectures}
-
-%------------------------------------------------
-% Certifications
-%------------------------------------------------
-
-\input{\Certifications/certifications}
-
-%------------------------------------------------
-% Achievements
-%------------------------------------------------
-
-\end{minipage} % The end of the right column
-
-%-----------------------------------------------
+\input{\Lectures/lectures}
+\input{sections/education/education}
 
 \end{document}
